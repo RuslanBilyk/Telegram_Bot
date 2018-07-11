@@ -36,17 +36,13 @@ bot.on('message', (msg) => {
     const chatId = msg.chat.id; 
     //bot.sendMessage(chatId, msg.text);
     bot.sendMessage(chatId, 'Received your message');
+   
+    var photo = './q.jpg';
+    bot.sendPhoto(msg.chat.id, photo, {caption: "Image info!"});
+
     switch(msg.text){
         case '📁 Каталог' :
-        bot.sendPhoto({
-    chat_id : chatId,
-    caption: 'This is my test image',
-    photo: '‪C:/Users/Rusla/Desktop/Photo/DSCN6717.JPG'//replace your image url here
-})
-.then(function(data)
-{
-    console.log(data);
-});
+
         bot.sendMessage(msg.chat.id, msg.text, katalogKeyboard);
         bot.sendMessage(msg.chat.id, 'Выберите любую кнопку:', options);
         break;
